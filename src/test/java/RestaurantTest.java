@@ -74,6 +74,22 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	
+	//<<<<<<<<<<<<<<<<<<<<<<<New Feature >>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void display_total_price_value_for_items_added(){
+
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        assertEquals(restaurant.getTotalOrderValue(restaurant.getMenu()),Double.valueOf(388));
+
+    }
+
+    @Test
+    public  void display_total_price_0_if_no_items_added(){
+        System.out.println(restaurant.totalOrderValue(restaurant.getMenu()));
+        assertEquals(restaurant.getTotalOrderValue(restaurant.getMenu()),Double.valueOf(0));
+    }
 
 
 }
