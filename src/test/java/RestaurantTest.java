@@ -82,13 +82,14 @@ class RestaurantTest {
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
         assertEquals(restaurant.getTotalOrderValue(restaurant.getMenu()),Double.valueOf(388));
-
+        assertThat("Your order will cost: 388.0",restaurant.getTotalOrderValue(restaurant.getMenu()).equals(388.0));
     }
 
     @Test
     public  void display_total_price_0_if_no_items_added(){
         System.out.println(restaurant.totalOrderValue(restaurant.getMenu()));
         assertEquals(restaurant.getTotalOrderValue(restaurant.getMenu()),Double.valueOf(0));
+		assertThat("Your order will cost: 0.0",restaurant.getTotalOrderValue(restaurant.getMenu()).equals(0.0));
     }
 
 

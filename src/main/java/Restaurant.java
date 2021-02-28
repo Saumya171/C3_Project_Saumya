@@ -64,6 +64,18 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+	
+ //<<<<<<<<<<<<<<<<<<<<<<<New Feature >>>>>>>>>>>>>>>>>>>>>>>
+    
+    public Double getTotalOrderValue(List<Item> itemName){
+      Double totalCost=0.0d;
+        for (Item item:menu){
+            totalCost= totalCost + item.getPrice();
+        }
+        System.out.println("Your order will cost: " + totalCost);
+        return totalCost;
+
+   }
 
 
 }
